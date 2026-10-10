@@ -1,0 +1,60 @@
+{
+  "dataset": "OpenNeuro ds004021",
+  "day": 1,
+  "phase": "rotation",
+  "subjects": [
+    "sub-37",
+    "sub-11",
+    "sub-27",
+    "sub-10",
+    "sub-29",
+    "sub-19"
+  ],
+  "selection": "Six illustrative profiles chosen after exploratory inspection; not a random or representative sample. Includes different fitted decay times, signed asymptotes and degrees of model separation; all three fitted shape parameters are interior to the retained search bounds.",
+  "source_commit": "c220f4b343ebf50c6c13c5fc9d6c0cb3ef82b15c",
+  "preparation": "Only missing response_error rows omitted; original trial positions retained. No outlier deletion, smoothing or baseline subtraction.",
+  "audit": [
+    {
+      "subject": "sub-37",
+      "scheduled_trials": 320,
+      "included_trials": 316,
+      "missing_error_omitted": 4,
+      "source_sha256": "b9f4ffa96209bddeb04a1d0ff24aac9dfa10261ea38b140d7ee3529f40e4961c"
+    },
+    {
+      "subject": "sub-11",
+      "scheduled_trials": 320,
+      "included_trials": 317,
+      "missing_error_omitted": 3,
+      "source_sha256": "94b835a373b6bedea0632e21ed01afac7888f563a21259f590d80d321fc9730d"
+    },
+    {
+      "subject": "sub-27",
+      "scheduled_trials": 320,
+      "included_trials": 313,
+      "missing_error_omitted": 7,
+      "source_sha256": "284263378b7e2548eac103ab274b0edeb4817af48cc89059fdd5f79dab3c488a"
+    },
+    {
+      "subject": "sub-10",
+      "scheduled_trials": 320,
+      "included_trials": 320,
+      "missing_error_omitted": 0,
+      "source_sha256": "5166caa028762648b97224deb9c719e45f01376658440f0c49c8ef6405c12088"
+    },
+    {
+      "subject": "sub-29",
+      "scheduled_trials": 320,
+      "included_trials": 320,
+      "missing_error_omitted": 0,
+      "source_sha256": "79247d9ffd3f4eaab26cdc666f26f1a90df975d9140d24e4653c298cdc6ca129"
+    },
+    {
+      "subject": "sub-19",
+      "scheduled_trials": 320,
+      "included_trials": 320,
+      "missing_error_omitted": 0,
+      "source_sha256": "d7302dc0d133ff5dfe4e8ad382422a2cb45a3e155f6ceedce5d571ff706dc971"
+    }
+  ]
+}
