@@ -487,27 +487,27 @@ int main(void)
     double T_min = 1.0; // Temperatura mínima
     Solution data; // Vector de datos
     int L = 32; // Tamaño del sistema
-    int MCSteps = 10000; // Número de pasos Montecarlo
+    int MCSteps = 100000; // Número de pasos Montecarlo
     int warmup = 100; // Pasos de calentamiento
-    int save_each = 1000; // Cada cuantos pasos se guardan los datos
+    int save_each = 100; // Cada cuantos pasos se guardan los datos
     mt19937 rng(random_device{}());
     uniform_real_distribution uni(0.0, 1.0);
     uniform_int_distribution pos(0, L-1);
     bernoulli_distribution bern(0.5);
     vector<int> grid = initialise(L, bern, rng);
 
-    auto correlation = correlation_function(grid, 4.0, L, MCSteps, rng, uni, pos);
-    for (int i = 0; i < MCSteps; i++)
-    {
-        CorrFile << correlation[i] << endl;
-    }
-    
-    // for (double T = T_0; T > T_min; T -= dT)
+    // auto correlation = correlation_function(grid, 4.0, L, MCSteps, rng, uni, pos);
+    // for (int i = 0; i < MCSteps; i++)
     // {
-    //     cout << "Simulando sistema para T = " + to_string(T) << endl;
-    //     data = simulate_and_save(grid, T, L, MCSteps, warmup, save_each, rng, uni, pos);
-    //     OutFile << data.T << "\t" << data.E << "\t" << data.M << "\t" << data.C_H << "\t" << data.chi << endl;
+    //     CorrFile << correlation[i] << endl;
     // }
+    
+    for (double T = T_0; T > T_min; T -= dT)
+    {
+        cout << "Simulando sistema para T = " + to_string(T) << endl;
+        data = simulate_and_save(grid, T, L, MCSteps, warmup, save_each, rng, uni, pos);
+        OutFile << data.T << "\t" << data.E << "\t" << data.M << "\t" << data.C_H << "\t" << data.chi << endl;
+    }
     
     OutFile.close();
     CorrFile.close();
